@@ -45,28 +45,81 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Autenticación
 
-```bash
-# unit tests
-$ npm run test
+### Inicio de Sesión (Login)
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- **URL:** POST /api/v1/auth/sign-in
+- **Descripción:** Inicia sesión en la aplicación.
+- **Cuerpo requerido:**
+  ```json
+  {
+    "email": "String",
+    "password": "String"
+  }
+Registro de Usuario
+URL: POST /api/v1/auth/sign-up
+Descripción: Registra un nuevo usuario en la aplicación.
+Cuerpo requerido:
+json
+Copy code
+{
+  "email": "String",
+  "password": "String",
+  "firstName": "String",
+  "lastName": "String"
+}
+Requiere Sesión y Cookie
+Tareas
+Registro de Tarea
+URL: POST /api/v1/tasks
+Descripción: Registra una nueva tarea.
+Cuerpo requerido:
+json
+Copy code
+{
+  "name": "String",
+  "description": "String",
+  "dueDate": "Date"
+}
+Obtener una Tarea
+URL: GET /api/v1/tasks/{id}
+Descripción: Obtiene una tarea específica por su ID.
+Obtener Todas las Tareas
+URL: GET /api/v1/tasks
+Descripción: Obtiene todas las tareas disponibles.
+Eliminar una Tarea
+URL: DELETE /api/v1/tasks/{ID}
+Descripción: Elimina una tarea específica por su ID.
+Actualizar Tarea
+URL: PATCH /api/v1/tasks/{ID}
+Descripción: Actualiza una tarea específica por su ID.
+Cuerpo requerido:
+json
+Copy code
+{
+  "name": "String",
+  "description": "String",
+  "dueDate": "Date"
+}
+Requiere Sesión y Cookie
+Usuario
+Eliminar Mi Cuenta
+URL: DELETE /api/v1/users/
+Descripción: Elimina la cuenta del usuario actual.
+Actualizar Mi Cuenta
+URL: PATCH /api/v1/users/
+Descripción: Actualiza la cuenta del usuario actual.
+Cuerpo requerido:
+json
+Copy code
+{
+  "firstName": "String",
+  "lastName": "String"
+}
+Obtener Datos de Mi Cuenta
+URL: GET /api/v1/users/
+Descripción: Obtiene los datos de la cuenta del usuario actual.
 
 ## License
 
