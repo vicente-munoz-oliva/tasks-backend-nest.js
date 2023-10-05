@@ -1,4 +1,11 @@
-import { IsNotEmpty, IsString, MaxLength } from 'class-validator';
+import { IsNotEmpty, IsString, MaxLength, IsEnum } from 'class-validator';
+
+
+export enum Status {
+    pending = 'pending',
+    inProgress = 'in progress',
+    completed = 'completed',
+}
 
 export class CreateTaskDto {
     userId: number;
@@ -11,4 +18,6 @@ export class CreateTaskDto {
     description: string;
     @IsNotEmpty()
     dueDate: Date;
+    @IsEnum(Status)
+    status: Status;
 }

@@ -1,6 +1,12 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { CreateTaskDto } from './create-task.dto';
-import { IsNotEmpty, IsString, MaxLength } from 'class-validator';
+import { IsNotEmpty, IsString, MaxLength, IsEnum } from 'class-validator';
+
+export enum Status {
+    pending = 'pending',
+    inProgress = 'in progress',
+    completed = 'completed',
+}
 
 export class UpdateTaskDto extends PartialType(CreateTaskDto) {
     @MaxLength(255)
@@ -12,4 +18,6 @@ export class UpdateTaskDto extends PartialType(CreateTaskDto) {
     description: string;
     @IsNotEmpty()
     dueDate: Date;
+    @IsEnum(Status)
+    status: Status;
 }

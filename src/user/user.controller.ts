@@ -11,24 +11,21 @@ export class UserController {
 
   constructor(private readonly userService: UserService) { }
 
-  @Post()
-  create(@Body() createUserDto: CreateUserDto) {
-    return this.userService.create(createUserDto);
-  }
-
   @Get()
   findOne(@Req() request: Request) {
     const id: number = request['user'].userId;
     return this.userService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
+  @Patch()
+  update(@Req() request: Request, @Body() updateUserDto: UpdateUserDto) {
+    const id: number = request['user'].userId;
     return this.userService.update(+id, updateUserDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
+
+  remove(@Req() request: Request) {
+    const id: number = request['user'].userId;
     return this.userService.remove(+id);
   }
 

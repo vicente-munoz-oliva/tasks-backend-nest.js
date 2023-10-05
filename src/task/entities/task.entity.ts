@@ -26,4 +26,8 @@ export class Task {
     @Column({ type: "int", nullable: true })
     userId: number;
 
+    @Column({ type: 'enum', enum: ['pending', 'in progress', 'completed'] })
+
+    status: string;
+
 }
