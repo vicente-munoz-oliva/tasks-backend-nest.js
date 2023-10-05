@@ -70,7 +70,8 @@ $ npm run start:prod
   {
     "name": "String",
     "description": "String",
-    "dueDate": "Date"
+    "dueDate": "Date",
+    "status": String<"completed"|"inProgress"|"pending">
   }
   ```
 
@@ -99,6 +100,7 @@ $ npm run start:prod
     "name": "String",
     "description": "String",
     "dueDate": "Date"
+    "status": String<"completed"|"inProgress"|"pending">
   }
   ```
 - **Requires Session and Cookie**
@@ -126,4 +128,4 @@ $ npm run start:prod
 
 - **URL:** GET /api/v1/users/
 - **Description:** Get the data of the current user's account.
-```
+
