@@ -45,9 +45,6 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-¡Por supuesto! Aquí tienes la documentación en formato Markdown (`.md`) que puedes copiar y pegar directamente en tu README de Git:
-
-```markdown
 ## Autenticación
 
 ### Inicio de Sesión (Login)
