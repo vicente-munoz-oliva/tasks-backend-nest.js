@@ -7,20 +7,7 @@
 
   <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
     <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+
 
 ## Description
 
@@ -45,13 +32,14 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Autenticación
 
-### Inicio de Sesión (Login)
+## Authentication
+
+### Sign-In (Login)
 
 - **URL:** POST /api/v1/auth/sign-in
-- **Descripción:** Inicia sesión en la aplicación.
-- **Cuerpo requerido:**
+- **Description:** Log in to the application.
+- **Required Body:**
   ```json
   {
     "email": "String",
@@ -59,11 +47,11 @@ $ npm run start:prod
   }
   ```
 
-### Registro de Usuario
+### Sign-Up
 
 - **URL:** POST /api/v1/auth/sign-up
-- **Descripción:** Registra un nuevo usuario en la aplicación.
-- **Cuerpo requerido:**
+- **Description:** Register a new user in the application.
+- **Required Body:**
   ```json
   {
     "email": "String",
@@ -72,15 +60,15 @@ $ npm run start:prod
     "lastName": "String"
   }
   ```
-- **Requiere Sesión y Cookie**
+- **Requires Session and Cookie**
 
-## Tareas
+## Tasks
 
-### Registro de Tarea
+### Task Registration
 
 - **URL:** POST /api/v1/tasks
-- **Descripción:** Registra una nueva tarea.
-- **Cuerpo requerido:**
+- **Description:** Register a new task.
+- **Required Body:**
   ```json
   {
     "name": "String",
@@ -89,26 +77,26 @@ $ npm run start:prod
   }
   ```
 
-### Obtener una Tarea
+### Get a Task
 
 - **URL:** GET /api/v1/tasks/{id}
-- **Descripción:** Obtiene una tarea específica por su ID.
+- **Description:** Get a specific task by its ID.
 
-### Obtener Todas las Tareas
+### Get All Tasks
 
 - **URL:** GET /api/v1/tasks
-- **Descripción:** Obtiene todas las tareas disponibles.
+- **Description:** Get all available tasks.
 
-### Eliminar una Tarea
+### Delete a Task
 
 - **URL:** DELETE /api/v1/tasks/{ID}
-- **Descripción:** Elimina una tarea específica por su ID.
+- **Description:** Delete a specific task by its ID.
 
-### Actualizar Tarea
+### Update Task
 
 - **URL:** PATCH /api/v1/tasks/{ID}
-- **Descripción:** Actualiza una tarea específica por su ID.
-- **Cuerpo requerido:**
+- **Description:** Update a specific task by its ID.
+- **Required Body:**
   ```json
   {
     "name": "String",
@@ -116,20 +104,20 @@ $ npm run start:prod
     "dueDate": "Date"
   }
   ```
-- **Requiere Sesión y Cookie**
+- **Requires Session and Cookie**
 
-## Usuario
+## User
 
-### Eliminar Mi Cuenta
+### Delete My Account
 
 - **URL:** DELETE /api/v1/users/
-- **Descripción:** Elimina la cuenta del usuario actual.
+- **Description:** Delete the current user's account.
 
-### Actualizar Mi Cuenta
+### Update My Account
 
 - **URL:** PATCH /api/v1/users/
-- **Descripción:** Actualiza la cuenta del usuario actual.
-- **Cuerpo requerido:**
+- **Description:** Update the current user's account.
+- **Required Body:**
   ```json
   {
     "firstName": "String",
@@ -137,10 +125,8 @@ $ npm run start:prod
   }
   ```
 
-### Obtener Datos de Mi Cuenta
+### Get My Account Data
 
 - **URL:** GET /api/v1/users/
-- **Descripción:** Obtiene los datos de la cuenta del usuario actual.
+- **Description:** Get the data of the current user's account.
 ```
-
-
