@@ -1,6 +1,5 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Req } from '@nestjs/common';
+import { Controller, Get, Body, Patch, UseGuards, Req } from '@nestjs/common';
 import { UserService } from './user.service';
-import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { AuthGuard } from 'src/auth/auth.guard';
 import { Request } from 'express';
@@ -13,6 +12,7 @@ export class UserController {
 
   @Get()
   findOne(@Req() request: Request) {
+
     const id: number = request['user'].userId;
     return this.userService.findOne(+id);
   }
@@ -22,7 +22,6 @@ export class UserController {
     const id: number = request['user'].userId;
     return this.userService.update(+id, updateUserDto);
   }
-
 
   remove(@Req() request: Request) {
     const id: number = request['user'].userId;
