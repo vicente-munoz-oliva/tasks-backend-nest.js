@@ -11,17 +11,20 @@ export class AuthController {
 
   @Post("sign-in")
   async create(@Body() createAuthDto: AuthLoginDto, @Res({ passthrough: true }) response: Response) {
-
     const { token } = await this.authService.signIn(createAuthDto)
-
-    response.cookie('key', token)
-
+    response.cookie('lW611f', token, { httpOnly: true })
     return { message: 'Ok' }
   }
 
   @Post("sign-up")
   register(@Body() authRegisterDto: AuthRegisterDto) {
     return this.authService.signUp(authRegisterDto);
+  }
+
+  @Post('sign-out') 
+  async signOut(@Res({ passthrough: true }) response: Response) {
+    response.clearCookie('lW611f'); 
+    return { message: 'Cookie sign-out' };
   }
 
 
