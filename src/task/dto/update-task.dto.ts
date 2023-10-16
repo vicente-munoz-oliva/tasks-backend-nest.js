@@ -6,6 +6,7 @@ export enum Status {
     pending = 'pending',
     inProgress = 'in progress',
     completed = 'completed',
+    cancelled = 'cancelled',
 }
 
 export class UpdateTaskDto extends PartialType(CreateTaskDto) {
