@@ -20,12 +20,12 @@ export class AuthService {
     let user: CreateUserDto = await this.usersService.findByEmailWithPassword({ email: authLoginDto.email });
 
     if (!user)
-      throw new HttpException('email is wrong', HttpStatus.UNAUTHORIZED);
+      throw new HttpException('wrong credentials', HttpStatus.UNAUTHORIZED);
 
     const isPasswordValid = await bcrypt.compare(authLoginDto.password, user.password);
 
     if (!isPasswordValid)
-      throw new HttpException('password is wrong', HttpStatus.UNAUTHORIZED);
+      throw new HttpException('wrong credentials', HttpStatus.UNAUTHORIZED);
 
     const token = await this.jwtService.signAsync({ userId: user.userId });
 
